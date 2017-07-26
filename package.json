@@ -15,7 +15,7 @@
         "express": "~4.14.1",
         "mongodb": "^2.2.25",
         "mongoose": "^4.9.7",
-        "pug": "^2.0.0",
+        "pug": "~2.6.3",
         "morgan": "~1.7.0",
         "serve-favicon": "~2.3.2"
     }
