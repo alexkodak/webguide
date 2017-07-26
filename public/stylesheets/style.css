@@ -1,0 +1,94 @@
+body {
+  padding: 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+	margin:0 0 .5em 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#wrapper {
+	padding-left:312px;
+	position:relative;
+}
+
+#roomList {
+	margin:0 0 30px 0;
+}
+	#roomList table {
+		border-collapse:separate;
+		border-spacing:1px;
+		background:#CCC;
+	}
+		#roomList table th {
+			background:#EEE;
+			font-weight:600;
+			padding:10px 20px;
+			text-align:center;
+		}
+		#roomList table tbody {
+			padding:0; margin:0;
+			border-collapse:collapse;
+			border-spacing:0px;
+		}
+			#roomList table td {
+				background:#FFF;
+				padding:5px 10px;
+				text-align:center;
+			}
+
+#roomInfo {
+	width:250px;
+	position:absolute;
+	top:0; left:0;
+}
+	#roomInfo p {
+		padding:15px;
+		border:1px solid #CCC;
+		background:rgba(80,120,255,0.05);
+	}
+
+	#captionList {
+	margin:0 0 30px 0;
+}
+	#captionList table {
+		border-collapse:separate;
+		border-spacing:1px;
+		background:#CCC;
+	}
+		#captionList table th {
+			background:#EEE;
+			font-weight:600;
+			padding:10px 20px;
+			text-align:center;
+		}
+		#captionList table tbody {
+			padding:0; margin:0;
+			border-collapse:collapse;
+			border-spacing:0px;
+		}
+			#captionList table td {
+				background:#FFF;
+				padding:5px 10px;
+				text-align:center;
+			}
+
+#captionInfo {
+	width:250px;
+	position:absolute;
+	top:0; left:0;
+}
+	#captionInfo p {
+		padding:15px;
+		border:1px solid #CCC;
+		background:rgba(80,120,255,0.05);
+	}
+	
+fieldset {
+	border:0;
+	padding:0; margin:0;
+}
