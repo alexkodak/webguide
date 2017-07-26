@@ -19,7 +19,7 @@ var captionListData = [];
 // Fill Roomlist table with data
 function populateRoomList() {
       var tableContent = '';
-     $.getJSON('/roomlist/', function(data){
+     $.getJSON('https://rocky-sea-64149.herokuapp.com/roomlist/', function(data){
        roomListData = data;
         $.each(data, function(){
             tableContent += '<tr>';
@@ -36,7 +36,7 @@ function populateRoomList() {
 // Fill Captionlist table with data
 function populateCaptionList() {
   var tableContent = '';
-      $.getJSON('/1' + result, function(data){
+      $.getJSON('https://rocky-sea-64149.herokuapp.com/1' + result, function(data){
          captionListData = data;
         $.each(data, function(){
             tableContent += '<tr>';
