@@ -19,7 +19,7 @@ var captionListData = [];
 // Fill Roomlist table with data
 function populateRoomList() {
       var tableContent = '';
-     $.getJSON('/roomlist/', function(data){
+     $.getJSON('https://blooming-wave-81088.herokuapp.com/rooms/', function(data){
        roomListData = data;
         $.each(data, function(){
             tableContent += '<tr>';
