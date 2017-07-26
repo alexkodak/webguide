@@ -2,6 +2,9 @@
   "name": "webguide",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "v8.1.4"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
