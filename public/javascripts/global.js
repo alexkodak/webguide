@@ -9,41 +9,56 @@ var captionListData = [];
     // Populate the room table on initial page load
     populateRoomList();
 
-    // Populate the caption table on initial page load
-    populateCaptionList();
-
   });
+
 
 // Functions =============================================================
 
 // Fill Roomlist table with data
 function populateRoomList() {
       var tableContent = '';
-     $.getJSON('https://rocky-sea-64149.herokuapp.com/roomlist/', function(data){
+     $.getJSON('/roomlist/', function(data){
        roomListData = data;
         $.each(data, function(){
-            tableContent += '<tr>';
-            tableContent += '<td><a href="/room=' + this.roomnumber + '" class="linkshowuser" rel="' + this.roomnumber + '">' + this.roomnumber + '</a></td>';
-            tableContent += '<td><a href="/room=' + this.roomnumber + '" class="linkshowuser" rel="' + this.roomnumber + '">' + this.roomname + '</a></td>';
+            tableContent += '<tr id= '+ this.roomnumber +'>';
+            tableContent += '<td id= '+ this.roomnumber +'>' + this.roomnumber + '</td>';
+            tableContent += '<td id= '+ this.roomnumber +'>' + this.roomname + '</td>';
             tableContent += '</tr>';
         });
         $('#roomList table tbody').html(tableContent);
+
+      // add the onclick URL and function
+        $(document).ready(function(){
+          $('#roomList table tbody tr').click(function(){
+
+          // Create cookie on selecting a room
+          document.cookie = "room=" + this.id;
+          var roomId = this.id;
+          redirectRoom(roomId);
+          populateCaptionList();
+            });
         });
+  });
 };
 
 
+function redirectRoom(roomId){
+  location.href = '/room='+ roomId;
+}
 
 // Fill Captionlist table with data
 function populateCaptionList() {
   var tableContent = '';
-      $.getJSON('https://rocky-sea-64149.herokuapp.com/1' + result, function(data){
+  var room = document.cookie.replace(/(?:(?:^|.*;\s*)room\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+      $.getJSON('/' + room, function(data){
          captionListData = data;
         $.each(data, function(){
-            tableContent += '<tr>';
-            tableContent += '<td><a href="/' + this.reference + '" class="linkshowuser" rel="' + this.reference + '">' + this.reference + '</a></td>';
-            tableContent += '<td><a href="/' + this.reference + '" class="linkshowuser" rel="' + this.reference + '">' + this.title + '</a></td>';
-            tableContent += '</tr>';
+          tableContent += '<tr id= ' + this.reference +'>';
+          tableContent += '<td id= ' + this.reference +'>' + this.reference + '</td>';
+          tableContent += '<td id= ' + this.reference +'>' + this.title + '</td>';
+          tableContent += '</tr>';
         });
         $('#captionList table tbody').html(tableContent);
       });
-};
+}
